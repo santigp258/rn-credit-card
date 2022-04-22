@@ -14,6 +14,7 @@ const LibraryContext = createContext<ContextProps>({
   fonts: {},
   overrides: {},
   requiresName: true,
+  requiresExpDate: true,
   inputColors: {},
   // @ts-ignore
   translations: {},

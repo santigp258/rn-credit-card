@@ -25,7 +25,9 @@ const FrontSide: React.FC<Props> = ({
   focusedField,
   forceCardType,
 }) => {
-  const { overrides, translations, requiresName } = useContext(LibraryContext)
+  const { overrides, translations, requiresName, requiresExpDate } = useContext(
+    LibraryContext,
+  )
   const [numberLayout, setNumberLayout] = useState<LayoutRectangle | null>(null)
   const [nameLayout, setNameLayout] = useState<LayoutRectangle | null>(null)
   const [
@@ -121,16 +123,21 @@ const FrontSide: React.FC<Props> = ({
           {model.holderName.toUpperCase() || translations.nameSurname}
         </Text>
       )}
-      <PlaceholderText
-        style={[
-          styles.bottomText,
-          styles.expirationText,
-          overrides.expirationPreview,
-        ]}
-        value={model.expiration}
-        placeholder={translations.mmYY}
-        onLayout={({ nativeEvent }) => setExpirationLayout(nativeEvent.layout)}
-      />
+      {requiresExpDate ? (
+        <PlaceholderText
+          style={[
+            styles.bottomText,
+            styles.expirationText,
+            overrides.expirationPreview,
+          ]}
+          value={model.expiration}
+          placeholder={translations.mmYY}
+          onLayout={({ nativeEvent }) =>
+            setExpirationLayout(nativeEvent.layout)
+          }
+        />
+      ) : null}
+
       <Animated.View
         style={[
           styles.outline,

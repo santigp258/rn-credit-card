@@ -67,6 +67,7 @@ export type LibraryProps = {
   horizontalStart?: boolean
   formOnly?: boolean
   requiresName?: boolean
+  requiresExpDate?: boolean
   backgroundImage?: React.ReactNode
   translations?: Translations
   inputColors?: InputColors
