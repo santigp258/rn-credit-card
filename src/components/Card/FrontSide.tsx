@@ -104,7 +104,7 @@ const FrontSide: React.FC<Props> = ({
           {requiresName ? translations.cardHolderName.toUpperCase() : ''}
         </Text>
         <Text style={[styles.labelText, overrides.labelText]}>
-          {translations.expiration}
+          {requiresExpDate ? translations.expiration : null}
         </Text>
       </View>
       {requiresName && (
