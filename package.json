@@ -1,6 +1,6 @@
 {
-  "name": "rn-credit-card",
-  "version": "1.0.2",
+  "name": "@santigp258/rn-credit-card",
+  "version": "1.0.3",
   "description": "Credit card form for react native",
   "license": "MIT",
   "keywords": [
@@ -27,7 +27,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/halilb/rn-credit-card.git"
+    "url": "git+https://github.com/santigp258/rn-credit-card"
   },
   "dependencies": {
     "card-validator": "^8.1.0",
