@@ -16,9 +16,15 @@ type Props = {
   model: FormModel
   cardType?: string
   focusedField: CardFields | null
+  forceCardType?: boolean
 }
 
-const FrontSide: React.FC<Props> = ({ model, cardType, focusedField }) => {
+const FrontSide: React.FC<Props> = ({
+  model,
+  cardType,
+  focusedField,
+  forceCardType,
+}) => {
   const { overrides, translations, requiresName } = useContext(LibraryContext)
   const [numberLayout, setNumberLayout] = useState<LayoutRectangle | null>(null)
   const [nameLayout, setNameLayout] = useState<LayoutRectangle | null>(null)
@@ -69,7 +75,11 @@ const FrontSide: React.FC<Props> = ({ model, cardType, focusedField }) => {
   return (
     <>
       <View style={styles.header}>
-        <CardIcon cardNumber={model.cardNumber} />
+        <CardIcon
+          forceCardType={forceCardType}
+          cardNumber={model.cardNumber}
+          cardType={cardType}
+        />
       </View>
       <PlaceholderText
         style={[

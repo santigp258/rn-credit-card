@@ -11,6 +11,7 @@ type Props = {
   focusedField: CardFields | null
   cardType?: string
   model: FormModel
+  forceCardType?: boolean
 }
 
 function usePrevious(value: any) {
@@ -23,7 +24,12 @@ function usePrevious(value: any) {
 
 const background = require('../../assets/background.png')
 
-const Card: React.FC<Props> = ({ model, cardType, focusedField }) => {
+const Card: React.FC<Props> = ({
+  model,
+  cardType,
+  focusedField,
+  forceCardType,
+}) => {
   const { backgroundImage } = useContext(LibraryContext)
   const previousFocused = usePrevious(focusedField)
   const cardRef = useRef<FlipCard>()
@@ -50,6 +56,7 @@ const Card: React.FC<Props> = ({ model, cardType, focusedField }) => {
           <FrontSide
             model={model}
             cardType={cardType}
+            forceCardType={forceCardType}
             focusedField={focusedField}
           />
         </>
