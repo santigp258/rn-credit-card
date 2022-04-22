@@ -82,7 +82,7 @@ const CreditCardForm: React.FC<LibraryProps> = (props) => {
     }
 
     if (focusedField === CardFields.CardNumber && !requiresName) {
-      expirationRef.current.focus()
+      expirationRef.current?.focus()
       return
     }
 

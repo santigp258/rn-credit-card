@@ -25,9 +25,9 @@ This repository also contains my initial work of building a simple react native 
 Install the library first:
 
 ```
-npm install rn-credit-card
+npm install @santigp258/rn-credit-card
 // OR
-yarn add rn-credit-card
+yarn add @santigp258/rn-credit-card
 ```
 
 Install `react-hook-form`:
@@ -41,7 +41,7 @@ yarn add react-hook-form
 **Note**: The latest version of this project works with `react-hook-form` version `>7.0.0`. Stick with the version `0.2.0` if you'd like to use it with `react-hook-form: <7.0.0`:
 
 ```
-npm install rn-credit-card@0.2.0
+npm install @santigp258/rn-credit-card@0.2.0
 ```
 
 You also need to install `lottie-react-native` if you want to display card icon animations. Please note that this is optional, and the library will display simple card icons if `Lottie` is not present:
