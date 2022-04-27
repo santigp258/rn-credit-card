@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import {
   TextInput,
   StyleSheet,
@@ -8,7 +8,7 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native'
 import Text from './Text'
-import LibraryContext from '../LibraryContext'
+import { useLibraryContext } from '../hooks/useLibraryContext'
 
 type Props = React.ComponentProps<typeof TextInput> & {
   label: string
@@ -27,7 +27,7 @@ const TextField = React.forwardRef<TextInput, Props>((props, ref) => {
     onFocus,
     ...restOfProps
   } = props
-  const { inputColors = {}, fonts, overrides } = useContext(LibraryContext)
+  const { inputColors = {}, fonts, overrides } = useLibraryContext()
   const {
     errored: errorColor = '#B00020',
     focused: focusedColor = '#080F9C',

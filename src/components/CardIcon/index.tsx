@@ -1,7 +1,7 @@
-import React, { useCallback, useContext } from 'react'
+import React, { useCallback } from 'react'
 import { Image, StyleSheet } from 'react-native'
 import cardValidator from 'card-validator'
-import LibraryContext from '../../LibraryContext'
+import { useLibraryContext } from '../../hooks/useLibraryContext'
 
 type Props = {
   cardNumber: string
@@ -36,7 +36,7 @@ const CARDS: Record<string, Card> = {
 }
 
 const CardIcon: React.FC<Props> = (props) => {
-  const { LottieView } = useContext(LibraryContext)
+  const { LottieView } = useLibraryContext()
   const { cardNumber, forceCardType, cardType } = props
   const { card } = cardValidator.number(cardNumber)
 

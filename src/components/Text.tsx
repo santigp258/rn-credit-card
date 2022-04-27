@@ -1,6 +1,6 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Text as GlobalText } from 'react-native'
-import LibraryContext from '../LibraryContext'
+import { useLibraryContext } from '../hooks/useLibraryContext'
 
 type Props = React.ComponentProps<typeof GlobalText> & {
   bold?: boolean
@@ -8,7 +8,7 @@ type Props = React.ComponentProps<typeof GlobalText> & {
 
 const Text: React.FC<Props> = (props) => {
   const { bold, style, ...restOfProps } = props
-  const { fonts } = useContext(LibraryContext)
+  const { fonts } = useLibraryContext()
 
   return (
     <GlobalText
